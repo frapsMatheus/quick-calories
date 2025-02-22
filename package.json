@@ -20,7 +20,6 @@
     "@sveltejs/adapter-cloudflare": "^5.0.1",
     "@sveltejs/kit": "^2.16.0",
     "@sveltejs/vite-plugin-svelte": "^5.0.0",
-    "@tailwindcss/vite": "^4.0.0",
     "bun-types": "^1.2.2",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
@@ -28,10 +27,8 @@
     "globals": "^15.14.0",
     "prettier": "^3.4.2",
     "prettier-plugin-svelte": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
     "svelte": "^5.0.0",
     "svelte-check": "^4.0.0",
-    "tailwindcss": "^4.0.0",
     "typescript": "^5.0.0",
     "typescript-eslint": "^8.20.0",
     "vite": "^6.0.0",
@@ -41,12 +38,10 @@
   "optionalDependencies": {
     "@rollup/rollup-darwin-arm64": "^4.9.6",
     "@esbuild/darwin-arm64": "^0.24.2",
-    "@tailwindcss/oxide-darwin-arm64": "^4.0.0",
     "lightningcss-darwin-arm64": "^1.24.0",
     "@cloudflare/workerd-darwin-arm64": "latest"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.21.0",
-    "svelte-fa": "^4.0.3"
+    "@google/generative-ai": "^0.21.0"
   }
 }

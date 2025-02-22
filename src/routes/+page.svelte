@@ -1,4 +1,5 @@
 <script lang="ts">
+  import '../styles/main.scss';
   import type NutritionInfo from '$lib/types/NutritionInfo'
 
   let search = $state('')
@@ -36,7 +37,15 @@
 </script>
 
 <svelte:head>
-  <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+  <link 
+    rel="stylesheet" 
+    href="/fontawesome/css/all.min.css"   
+    media="print"
+    onload={(e) => {
+      (e.currentTarget as HTMLLinkElement).media = 'all';
+      (e.currentTarget as HTMLLinkElement).onload = null;
+    }}
+  />
 </svelte:head>
 
 <div class="landing-page container">
