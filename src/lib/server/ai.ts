@@ -1,16 +1,10 @@
 import { GoogleGenerativeAI, SchemaType } from '@google/generative-ai';
-import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
 import { env } from '$env/dynamic/private';
 import type NutritionInfo from '../types/NutritionInfo';
+import { nutritionPrompt } from './prompt';
 
 // Initialize Gemini
 const genAI = new GoogleGenerativeAI(env.GEMINI_API_KEY!);
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const template = readFileSync(join(__dirname, 'prompt.txt'), 'utf-8');
 
 const responseSchema = {
   type: SchemaType.ARRAY,
@@ -40,7 +34,7 @@ export async function extractNutritionInfo(text: string): Promise<NutritionInfo[
     },
   });
 
-  const prompt = template.replace('{alimento}', text);
+  const prompt = nutritionPrompt.replace('{alimento}', text);
 
   try {
     const result = await model.generateContent(prompt);
