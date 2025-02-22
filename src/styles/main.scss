@@ -1,0 +1,158 @@
+@import './fonts.scss';
+
+$primary: #C1D7D9; // light blue
+$secondary: #FFCB47; // sunglow
+$dark1: #494F50; // outer space
+$dark2: #3F4243; // onyx
+$dark3: #212627; // eerie black
+$white: #FFFFFF;
+
+body {
+  background-color: $dark3;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 0.75rem;
+  }
+}
+// TODO: Import 2 fonts, one for the title and one for the body
+
+.landing-page { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  height: 100vh;
+  .hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    h1 {
+      font-size: clamp(3rem, 8vw + 1rem, 6rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-family: 'Chakra Petch', sans-serif;
+      
+      background: linear-gradient(45deg, $primary 40%, $secondary);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+    h3 {
+      font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+      font-weight: 400;
+      color: $secondary;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-family: 'Chakra Petch', sans-serif;
+    }
+
+
+    .search-container {
+      width: 50%;
+      min-width: 300px;
+      display: flex;
+      align-items: center;
+      background-color: $white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 4px solid transparent;
+
+      &:focus-within {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-color: $primary;
+      }
+
+      input {
+        flex: 1;
+        padding: 1rem;
+        border: none;
+        color: $dark3;
+        margin-bottom: 0;
+        width: auto;
+        
+        &:focus {
+          outline: none;
+          border: none;
+          background-color: rgba($primary, 0.1);
+        }
+        
+        &::selection {
+          background-color: $primary;
+          color: $dark3;
+        }
+
+        &::-webkit-text-fill-color {
+          caret-color: $primary;
+        }
+      }
+
+      button {
+        background: none;
+        border: none;
+        padding: 1rem 1rem;
+        cursor: pointer;
+        color: $dark3;
+        transition: color 0.2s, background-color 0.2s;
+        i {
+          font-size: 1.2rem;
+        }
+      }
+      
+      &:focus-within {
+        button {
+          &:hover {
+            color: $secondary;
+            background-color: rgba($primary, 0.1);
+          }
+        }
+      }
+    }
+  }
+  .no-results {
+    color: $primary;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $white;
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 0rem 1rem 1rem 1rem;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    
+    th, td {
+      border: 1px solid $dark1;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: $primary;
+    }
+  }
+}
