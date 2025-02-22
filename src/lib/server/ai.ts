@@ -19,8 +19,21 @@ const responseSchema = {
       carbs: { type: SchemaType.NUMBER },
       fat: { type: SchemaType.NUMBER },
       fiber: { type: SchemaType.NUMBER },
-      serving: { type: SchemaType.STRING },
-      serving_unit: { type: SchemaType.STRING },
+      serving: { type: SchemaType.NUMBER },
+      serving_unit: { 
+        type: SchemaType.STRING,
+        enum: [
+          'g',      // grams
+          'ml',     // milliliters
+          'cup',    // cups
+          'tbsp',   // tablespoons
+          'tsp',    // teaspoons
+          'oz',     // ounces
+          'piece',  // individual pieces
+          'slice',  // slices
+          'unit'    // generic units
+        ]
+      },
     }
   }
 };
@@ -56,7 +69,7 @@ export async function extractNutritionInfo(text: string): Promise<NutritionInfo[
         typeof nutrition.carbs !== 'number' ||
         typeof nutrition.fat !== 'number' ||
         typeof nutrition.fiber !== 'number' ||
-        typeof nutrition.serving !== 'string' ||
+        typeof nutrition.serving !== 'number' ||
         typeof nutrition.serving_unit !== 'string' ||
         nutrition.name === 'Not found'
       ) {

@@ -1,5 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import path from 'path';
 
 export default defineConfig({
 	plugins: [sveltekit()],
@@ -7,7 +8,7 @@ export default defineConfig({
 		devSourcemap: true,
 		preprocessorOptions: {
 			scss: {
-				additionalData: '@use "./variables.scss" as *;'
+				additionalData: '@use "' + path.resolve('./src/styles/variables.scss') + '" as *;'
 			}
 		}
 	},

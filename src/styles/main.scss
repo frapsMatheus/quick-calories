@@ -1,19 +1,10 @@
 @use './fonts.scss';
 
 .container {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
-  width: 100%;
   box-sizing: border-box;
-
-  @media (max-width: 768px) {
-    padding: 0 1rem;
-  }
-
-  @media (max-width: 480px) {
-    padding: 0 0.75rem;
-  }
+  display: flex;
+  flex-direction: column;
 }
 // TODO: Import 2 fonts, one for the title and one for the body
 
@@ -28,12 +19,11 @@ input {
   // justify-content: center;
   height: 100vh;
   .hero {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 50vh;
+    min-height: 40vh;
     h1 {
       font-size: clamp(3rem, 8vw + 1rem, 6rem);
       font-weight: 700;
@@ -55,7 +45,9 @@ input {
       text-align: center;
       font-family: 'Chakra Petch', sans-serif;
     }
-
+    @media (max-width: 768px) {
+      padding: 0rem 1rem;
+    }
 
     .search-container {
       width: 50%;
@@ -124,30 +116,20 @@ input {
   .no-results {
     font-weight: 500;
     color: $primary;
+    text-align: center;
+    @media (max-width: 768px) {
+      padding: 0rem 2rem;
+    }
   }
   .content {
+    flex-grow: 1;
+    padding: 1rem;
+    width: 100%;
+    background-color: $white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $white;
     width: 100%;
-    border-radius: 0.5rem;
-    padding: 0rem 1rem 1rem 1rem;
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 1rem;
-    }
-    
-    th, td {
-      border: 1px solid $dark1;
-      padding: 8px;
-      text-align: left;
-    }
-    
-    th {
-      font-weight: 500;
-      background-color: $primary;
-    }
+    gap: 1rem;
   }
 }

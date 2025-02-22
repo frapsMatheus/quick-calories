@@ -1,0 +1,91 @@
+.nutrition-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 1rem;
+  background-color: $dark3;
+  padding: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  width: 80vw;
+  max-width: 500px;
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .name {
+      color: $white;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .calories {
+      color: $primary;
+      font-size: 1.2rem;
+      font-weight: 500;
+      span {
+        color: $secondary;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+    }
+  }
+  &-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    > * {
+      text-align: center;
+      flex: 0 1 calc(33.33% - 4px);  // 33.33% width minus some space for gap
+    }
+    p {
+      color: $primary;
+      font-size: 1rem;
+      font-weight: 500;
+      span {
+        font-size: 1.2rem;
+        color: $secondary;
+        font-weight: 600;
+      }
+      &.serving-input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        
+        input {
+          width: 60px;
+          padding: 4px 8px;
+          border: 1px solid $primary;
+          border-radius: 4px;
+          background: transparent;
+          color: $secondary;
+          font-size: 1.1rem;
+          text-align: center;
+          
+          /* Remove spinner arrows */
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          
+          /* Firefox */
+          &[type=number] {
+            -moz-appearance: textfield;
+          }
+          
+          &:focus {
+            outline: none;
+            border-color: $secondary;
+          }
+        }
+        
+        .unit {
+          font-size: 1rem;
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+

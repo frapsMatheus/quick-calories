@@ -6,6 +6,6 @@ export default interface NutritionInfo {
   carbs: number;
   fat: number;
   fiber: number;
-  serving: string;
+  serving: number;
   serving_unit: string;
 }
