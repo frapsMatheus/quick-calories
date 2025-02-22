@@ -97,7 +97,7 @@
           </tr>
         {/each}
         <tr class="totals-row">
-          <td><strong>Totals</strong></td>
+          <td>Totals</td>
           <td>{results.reduce((sum, item) => sum + item.calories, 0)}</td>
           <td>{results.reduce((sum, item) => sum + item.proteins, 0)}</td>
           <td>{results.reduce((sum, item) => sum + item.carbs, 0)}</td>

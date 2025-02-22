@@ -46,7 +46,6 @@
     "@cloudflare/workerd-darwin-arm64": "latest"
   },
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@google/generative-ai": "^0.21.0",
     "svelte-fa": "^4.0.3"
   }
