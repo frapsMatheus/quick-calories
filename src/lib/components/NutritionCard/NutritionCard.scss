@@ -18,6 +18,10 @@
       font-weight: 600;
     }
     .calories {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
       color: $primary;
       font-size: 1.2rem;
       font-weight: 500;
@@ -33,11 +37,13 @@
     flex-wrap: wrap;
     gap: 6px;
     justify-content: center;
-    > * {
+    &-item {
       text-align: center;
-      flex: 0 1 calc(33.33% - 4px);  // 33.33% width minus some space for gap
-    }
-    p {
+      flex: 0 1 calc(33.33% - 4px); 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
       color: $primary;
       font-size: 1rem;
       font-weight: 500;
@@ -85,7 +91,21 @@
           color: $primary;
         }
       }
+      &.totals {
+        flex: 0 1 calc(20% - 4px); 
+      }
     }
+  }
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+  
+  svg {
+    width: 24px;
+    height: 24px;
   }
 }
 

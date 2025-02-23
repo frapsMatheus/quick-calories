@@ -36,3 +36,14 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+
+
+
+# Icons used in the project:
+- [calories](https://www.svgrepo.com/svg/527044/fire-minimalistic)
+- [proteins](https://www.svgrepo.com/svg/521176/meat)
+- [carbs](https://www.svgrepo.com/svg/520567/bread)
+- [fat](https://www.svgrepo.com/svg/316491/waterdrop)
+- [fiber](https://www.svgrepo.com/svg/414428/plant)
+- [arrow-right](https://www.svgrepo.com/svg/521176/meat)

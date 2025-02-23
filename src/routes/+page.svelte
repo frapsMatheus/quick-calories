@@ -1,9 +1,9 @@
 <script lang="ts">
   import '../styles/main.scss';
   
-  import { nutritionResults, updateServing } from '$lib/components/shared.svelte'
+  import { nutritionResults } from '$lib/components/shared.svelte'
   import NutritionCard from '$lib/components/NutritionCard/NutritionCard.svelte';
-
+  import ArrowRight from '$lib/icons/arrow-right.svelte';
   let search = $state('')
 
   function fetchData() {
@@ -17,18 +17,6 @@
       })
   }
 </script>
-
-<svelte:head>
-  <link 
-    rel="stylesheet" 
-    href="/fontawesome/css/all.min.css"   
-    media="print"
-    onload={(e) => {
-      (e.currentTarget as HTMLLinkElement).media = 'all';
-      (e.currentTarget as HTMLLinkElement).onload = null;
-    }}
-  />
-</svelte:head>
 
 <div class="landing-page container">
   <div class="hero">
@@ -47,13 +35,14 @@
         placeholder="Search for food..."
       />
       <button onclick={fetchData} aria-label="Search">
-        <i class="fas fa-circle-right"></i>
+        <ArrowRight />
       </button>
     </div>
   </div>
   {#if nutritionResults.results.length > 0}
   <div class="content">
     <NutritionCard 
+      totals={true}
       name="Totals" 
       calories={nutritionResults.results.reduce((sum, r) => sum + r.calories, 0)}
       proteins={nutritionResults.results.reduce((sum, r) => sum + r.proteins, 0)} 
