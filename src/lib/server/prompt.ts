@@ -65,6 +65,4 @@ Informações Incompletas: Se encontrar o alimento, mas alguns dados nutricionai
 
 Evitar Repetições: Nunca retornarei itens repetidos na resposta.
 
-Buscar alimento:
-
-{alimento}`;
+Buscar alimento:`;

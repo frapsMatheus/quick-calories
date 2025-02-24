@@ -2,7 +2,7 @@
   import { nutritionResults } from '$lib/components/shared.svelte'
   import NutritionCard from '$lib/components/NutritionCard/NutritionCard.svelte';
   import TotalsCard from '$lib/components/Totals/Totals.svelte';
-  import ArrowRight from '$lib/icons/arrow-right.svelte';
+  import PlusCircle from '$lib/icons/plus_circle.svelte';
   import '../styles/main.scss';
   
   let search = $state('')
@@ -28,15 +28,12 @@
       <input 
         type="text" 
         bind:value={search}
-        onkeydown={(e) => {
-          if (e.key === 'Enter') {
-            fetchData();
-          }
-        }}
+        maxlength="100"
+        onkeydown={(e) => e.key === 'Enter' && fetchData()}
         placeholder="Search for food..."
       />
       <button onclick={fetchData} aria-label="Search">
-        <ArrowRight />
+        <PlusCircle />
       </button>
     </div>
   </div>

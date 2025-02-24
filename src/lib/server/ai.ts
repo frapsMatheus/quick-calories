@@ -38,19 +38,22 @@ const responseSchema = {
   }
 };
 
+const model = genAI.getGenerativeModel({ 
+  model: 'gemini-2.0-flash',   
+  generationConfig: {
+    responseMimeType: "application/json",
+    responseSchema: responseSchema,
+  },
+});
+const chat = model.startChat();
+await chat.sendMessage(nutritionPrompt);
+
 export async function extractNutritionInfo(text: string): Promise<NutritionInfo[]> {
-  const model = genAI.getGenerativeModel({ 
-    model: 'gemini-2.0-flash-lite-preview-02-05',   
-    generationConfig: {
-      responseMimeType: "application/json",
-      responseSchema: responseSchema,
-    },
-  });
-
-  const prompt = nutritionPrompt.replace('{alimento}', text);
-
   try {
-    const result = await model.generateContent(prompt);
+    if (text.length > 100) {
+      text = text.substring(0, 100);
+    }
+    const result = await chat.sendMessage(text);
     const response = await result.response;
     const jsonString = response.text();
     console.log(jsonString)

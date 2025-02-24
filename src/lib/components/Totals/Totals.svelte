@@ -15,17 +15,17 @@
   <div class="totals-card-body">
     <div class="totals-card-body-item">
       <ProteinIcon color="var(--secondary)" />
-      <p>{proteins}</p>
+      <p>{proteins.toFixed(2)}</p>
       <div class="totals-card-body-item-icon"> Proteins</div>
     </div>
     <div class="totals-card-body-item">
       <CarbsIcon color="var(--secondary)" />
-      <p>{carbs}</p>
+      <p>{carbs.toFixed(2)}</p>
       <div class="totals-card-body-item-icon"> Carbs</div>
     </div>
     <div class="totals-card-body-item">
       <OilIcon color="var(--secondary)" />
-      <p>{fat}</p>
+      <p>{fat.toFixed(2)}</p>
       <div class="totals-card-body-item-icon"> Fat</div>
     </div>
   </div>

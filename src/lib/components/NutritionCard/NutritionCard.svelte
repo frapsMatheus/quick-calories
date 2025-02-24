@@ -1,15 +1,20 @@
 <script lang="ts"> 
   import './NutritionCard.scss';
-  import { updateServing } from '$lib/components/shared.svelte';
+  import { updateServing, deleteItem } from '$lib/components/shared.svelte';
   import CaloriesIcon from '$lib/icons/calories.svelte';
   import ProteinIcon from '$lib/icons/protein.svelte';
   import CarbsIcon from '$lib/icons/carbs.svelte';
   import OilIcon from '$lib/icons/oil.svelte';
   import FiberIcon from '$lib/icons/fiber.svelte';
+  import TrashIcon from '$lib/icons/trash.svelte';
+
   let { position = undefined, name, calories, proteins, carbs, fat, fiber, serving = undefined, serving_unit = undefined } : { totals?: boolean, position?: number, name: string, calories: number, proteins: number, carbs: number, fat: number, fiber: number, serving?: number, serving_unit?: string } = $props();
 </script>
 
 <div class="nutrition-card">
+  <button class="nutrition-card-delete" onclick={() => deleteItem(position || 0)}>
+    <TrashIcon color="var(--remove)" />
+  </button>
   <div class="nutrition-card-header">
     <p class="name">{name}</p>
     <div class="calories">

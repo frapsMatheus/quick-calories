@@ -46,4 +46,5 @@ You can preview the production build with `npm run preview`.
 - [carbs](https://www.svgrepo.com/svg/520567/bread)
 - [fat](https://www.svgrepo.com/svg/316491/waterdrop)
 - [fiber](https://www.svgrepo.com/svg/414428/plant)
-- [arrow-right](https://www.svgrepo.com/svg/521176/meat)
+- [plus-circle](https://www.svgrepo.com/svg/442571/plus-circle)
+- [trash](https://www.svgrepo.com/svg/520910/recycle)

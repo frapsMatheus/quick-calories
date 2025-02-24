@@ -5,6 +5,13 @@ export let nutritionResults = $state({
   storedResults: [] as NutritionInfo[]
 })
 
+export function deleteItem(position: number) {
+  const newStoredResults = nutritionResults.storedResults.filter((_, index) => index !== position);
+  const newResults = nutritionResults.results.filter((_, index) => index !== position);
+  nutritionResults.storedResults = [...newStoredResults];
+  nutritionResults.results = [...newResults];
+}
+
 export function updateServing(position: number, newServing: number) {
   if (!newServing || newServing < 1) {
     return;
