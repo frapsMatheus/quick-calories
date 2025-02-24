@@ -1,9 +1,10 @@
 <script lang="ts">
-  import '../styles/main.scss';
-  
   import { nutritionResults } from '$lib/components/shared.svelte'
   import NutritionCard from '$lib/components/NutritionCard/NutritionCard.svelte';
+  import TotalsCard from '$lib/components/Totals/Totals.svelte';
   import ArrowRight from '$lib/icons/arrow-right.svelte';
+  import '../styles/main.scss';
+  
   let search = $state('')
 
   function fetchData() {
@@ -41,14 +42,11 @@
   </div>
   {#if nutritionResults.results.length > 0}
   <div class="content">
-    <NutritionCard 
-      totals={true}
-      name="Totals" 
+    <TotalsCard 
       calories={nutritionResults.results.reduce((sum, r) => sum + r.calories, 0)}
       proteins={nutritionResults.results.reduce((sum, r) => sum + r.proteins, 0)} 
       carbs={nutritionResults.results.reduce((sum, r) => sum + r.carbs, 0)}
       fat={nutritionResults.results.reduce((sum, r) => sum + r.fat, 0)}
-      fiber={nutritionResults.results.reduce((sum, r) => sum + r.fiber, 0)}
     />
     {#each nutritionResults.results as result, index}
       <NutritionCard position={index} name={result.name} calories={result.calories} proteins={result.proteins} carbs={result.carbs} fat={result.fat} fiber={result.fiber} serving={result.serving} serving_unit={result.serving_unit} />

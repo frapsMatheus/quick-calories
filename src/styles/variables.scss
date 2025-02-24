@@ -4,3 +4,12 @@ $dark1: #494F50; // outer space
 $dark2: #3F4243; // onyx
 $dark3: #212627; // eerie black
 $white: #FFFFFF;
+
+:root {
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --dark1: #{$dark1};
+  --dark2: #{$dark2};
+  --dark3: #{$dark3};
+  --white: #{$white};
+}
